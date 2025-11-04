@@ -114,7 +114,7 @@ export default {
   },
   computed: {
     imageUrl() {
-      return this.launch.image?.image_url;
+      return this.launch.image?.imageUrl;
     },
     rocketName() {
       return this.launch.rocket?.configuration?.name || this.launch.name;

@@ -9,7 +9,7 @@
     />
     <StatCard
       icon="check"
-      label="Safe NEOs"
+      label="Safe Near Earth Objects"
       :value="safeCount"
       subtitle="Monitored objects"
       color="green"

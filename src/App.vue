@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-950 to-violet-950">
+  <div class="min-h-screen bg-gradient-to-br from-gray-950 to-indigo-950">
     <CosmicBackground />
     
     <LoadingState v-if="loading" />
@@ -109,7 +109,7 @@ export default {
           throw new Error(`Launches API error: ${launchesResponse.status}`);
         }
         const launchesJson = await launchesResponse.json();
-        this.launches = launchesJson.results || [];
+        this.launches = launchesJson.launches || [];
 
         this.loading = false;
       } catch (err) {

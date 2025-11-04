@@ -13,16 +13,14 @@ export function formatDate(dateString) {
 
 export function getStatusColor(status) {
   if (!status) return 'bg-blue-500/20 text-blue-400 border border-blue-500/30';
-  
-  const statusLower = status.toLowerCase();
-  
-  if (statusLower.includes('go') || statusLower.includes('success')) {
+   
+  if ( status  == ('OK')) {
     return 'bg-green-500/20 text-green-400 border border-green-500/30';
   }
-  if (statusLower.includes('hold') || statusLower.includes('delay')) {
+  if (status == 'WARNING') {
     return 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30';
   }
-  if (statusLower.includes('fail') || statusLower.includes('abort')) {
+  if (status == 'FAIL') {
     return 'bg-red-500/20 text-red-400 border border-red-500/30';
   }
   
