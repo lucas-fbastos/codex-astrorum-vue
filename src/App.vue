@@ -13,16 +13,11 @@
           :hazardousCount="hazardousNEOs.length"
           :safeCount="safeNEOs.length"
           :launchesCount="launches.length"
-          :datesCount="dates.length"
         />
         
         <HazardousObjectsSection
           :hazardousNEOs="hazardousNEOs"
           :safeNEOs="safeNEOs"
-          :currentDate="currentDate"
-          :dates="dates"
-          :dateFilter="dateFilter"
-          @update:dateFilter="dateFilter = $event"
           @select-neo="selectNEO"
         />
         
@@ -72,24 +67,17 @@ export default {
         nearEarthObjects: {}
       },
       launches: [],
-      dateFilter: 0,
       selectedNEO: null,
       loading: true,
       error: null
     };
   },
   computed: {
-    dates() {
-      return Object.keys(this.neoData.hazardousObjects);
-    },
-    currentDate() {
-      return this.dates[this.dateFilter] || this.dates[0];
-    },
     hazardousNEOs() {
-      return this.neoData.hazardousObjects[this.currentDate] || [];
+      return Object.values(this.neoData.hazardousObjects).flat();
     },
     safeNEOs() {
-      return this.neoData.nearEarthObjects[this.currentDate] || [];
+      return Object.values(this.neoData.nearEarthObjects).flat();
     }
   },
   methods: {

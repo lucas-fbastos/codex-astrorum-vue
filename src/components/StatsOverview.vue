@@ -21,13 +21,6 @@
       subtitle="Upcoming missions"
       color="blue"
     />
-    <StatCard
-      icon="calendar"
-      label="Observation"
-      :value="datesCount"
-      subtitle="Days tracked"
-      color="purple"
-    />
   </div>
 </template>
 

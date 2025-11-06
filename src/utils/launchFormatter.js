@@ -12,9 +12,10 @@ export function formatDate(dateString) {
 }
 
 export function getStatusColor(status) {
-  if (!status) return 'bg-blue-500/20 text-blue-400 border border-blue-500/30';
-   
-  if ( status  == ('OK')) {
+  if (!status){
+    return 'bg-blue-500/20 text-blue-400 border border-blue-500/30';
+  } 
+  if ( status == "OK") {
     return 'bg-green-500/20 text-green-400 border border-green-500/30';
   }
   if (status == 'WARNING') {

@@ -123,7 +123,7 @@ export default {
       return this.launch.status?.name;
     },
     statusColorClass() {
-      return getStatusColor(this.statusName);
+      return getStatusColor(this.launch.status.badge);
     },
     missionName() {
       return this.launch.mission?.name;

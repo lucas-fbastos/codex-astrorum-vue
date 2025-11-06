@@ -5,9 +5,6 @@
         <span class="w-1 h-8 bg-gradient-to-b from-red-500 to-orange-500 rounded-full"></span>
         Hazardous Near Earth Objects
       </h2>
-      <div class="glass-card px-4 py-2">
-        <span class="text-purple-300 text-sm">{{ currentDate }}</span>
-      </div>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-6">
@@ -23,12 +20,6 @@
           />
         </div>
 
-        <DateSlider
-          :dates="dates"
-          :modelValue="dateFilter"
-          @update:modelValue="$emit('update:dateFilter', $event)"
-          class="mt-6"
-        />
       </div>
 
       <SafeNEOSidebar
@@ -42,7 +33,6 @@
 <script>
 import EmptyState from './EmptyState.vue';
 import NEOCard from './NEOCard.vue';
-import DateSlider from './DateSlider.vue';
 import SafeNEOSidebar from './SafeNEOSidebar.vue';
 
 export default {
@@ -50,7 +40,6 @@ export default {
   components: {
     EmptyState,
     NEOCard,
-    DateSlider,
     SafeNEOSidebar
   },
   props: {
@@ -60,18 +49,6 @@ export default {
     },
     safeNEOs: {
       type: Array,
-      required: true
-    },
-    currentDate: {
-      type: String,
-      required: true
-    },
-    dates: {
-      type: Array,
-      required: true
-    },
-    dateFilter: {
-      type: Number,
       required: true
     }
   },
